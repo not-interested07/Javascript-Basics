@@ -10,6 +10,7 @@ let valueInNumber = Number(score)
                             //will output NaN for string
 //console.log(typeof valueInNumber);
 
+//these are the results of the conversion
 //the notes
 //"33" => 33
 //"33abc" => NaN
@@ -25,6 +26,6 @@ let booleanIsLoggedIn = Boolean(IsLoggedIn)
 
 let someNumber = 33
 let StringNumber = String(someNumber)
-console.log(StringNumber);
-console.log(typeof StringNumber);
+console.log(StringNumber);        //at this point we check 
+console.log(typeof StringNumber); //this will output that the number is converted to string
 

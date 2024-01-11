@@ -1,4 +1,4 @@
-"use strict"; //treat all js code as newer version
+ "use strict"; //treat all js code as newer version
 //entire file is treated as newer syntax : no mix ups are allowed
 //alert(3 + 2 ) : we are using node js not browser
 //avoid semi-colon in most of the cases : try to write the code in a
