@@ -29,3 +29,52 @@ let StringNumber = String(someNumber)
 console.log(StringNumber);        //at this point we check 
 console.log(typeof StringNumber); //this will output that the number is converted to string
 
+//**************************************Operations**********************/
+let value = 3
+let negValue = - value
+console.log(negValue);         //works as expected
+
+//basic operations
+console.log(2 + 2);
+console.log(2 - 2);
+console.log(2 * 2);
+console.log(2 / 2);
+console.log(2 % 2);
+console.log(2 ** 2);
+
+//Tricky operations
+let str1 = "hello"
+let str2 = " hitesh"
+let str3 = str1 + str2
+console.log(str3);
+
+//these conversions are based on the ECMA script 
+console.log("1" + 2);       // 12
+console.log(1 + "2");       // 12
+console.log("1" + "2");     // 12
+console.log("1" + 2 + 2);   // 122
+console.log(1 + 2 + "2");   // 32
+
+// console.log(3 + 4 * 5 % 3); -- confusing node -- not appreciated
+
+//another conversion sets
+console.log(true);      //true
+console.log(+true);     //1 -- true+ as a case is not possible
+console.log(false);     //false
+console.log(+"");       //0 -- empty "" stands for false
+
+//this kind of code is not appreciated -- readability
+let num1, num2, num3 
+num1 = num2 = num3 = 2 + 2
+
+//prefix and postfix operators are demonstrated
+let gameCounter = 100
+gameCounter++;
+++gameCounter;
+console.log(gameCounter);   //101
+
+
+
+
+
+
