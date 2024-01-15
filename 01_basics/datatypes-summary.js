@@ -55,3 +55,29 @@ Arrays   -- object
 Function -- function
 object   -- object 
 */
+
+
+//**********************************************************************/
+//Stack and Heap memory
+//stack is used for primitive types     --copy of the value is provided
+//heap is used for non- primitve types  --reference to the value is provided
+
+//demonstration of call by value is present here 
+let myYoutubename = "hiteshchoudharydotcom"
+let anotherName = myYoutubename
+anotherName = "chai aur code"
+console.log(anotherName);   //chai aur code
+console.log(myYoutubename); //hiteshchaudharydotcom 
+
+//another example
+let userOne = {
+    email: "user@google.com",
+    upi:   "user@ybl"
+}
+
+//userTwo is provided the reference of userOne
+let userTwo = userOne
+userTwo.email  = "hitesh@google.com"
+//both of them will provide similar outputs
+console.log(userOne.email);
+console.log(userTwo.email);
