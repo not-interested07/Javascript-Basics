@@ -20,3 +20,21 @@ console.log(myCreatedDate2.toLocaleString());    //date -- 1/23/2023, 5:03:00 AM
 let myCreatedDate3 = new Date("2023-01-14")
 console.log()
 
+
+let myTimeStamp = Date.now()
+console.log(myTimeStamp);                   //the code line below and this will provide two time stamps for conversion
+console.log(myCreatedDate.getTime());       
+
+//used for the conversion to seconds and using floor is essential
+console.log(Math.floor(Date.now() / 1000));
+
+//other methods available with dates
+let newDate = new Date();
+console.log(newDate);
+console.log(newDate.getMonth());        //the months in count start from zero
+console.log(newDate.getMonth() + 1);    //the months in count starts from zero, for user - experience add 1
+console.log(newDate.getDay());          //starts from monday
+newDate.toLocaleString('default', {
+    weekday: "long",
+    dateStyle: "medium",
+} )
