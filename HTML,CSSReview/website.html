@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML CSS Review</title>
+    <style>
+      /*
+        This is a comment inside the CSS.
+        The styles below define two classes: 
+        - .red-button: A button with a red background and white text.
+        - .yellow-button: A button with a yellow background.
+      */
+      .red-button {
+        background-color: red; /* Sets the background color to red */
+        color: white; /* Sets the text color to white */
+        border: none; /* Removes the border */
+      }
+
+      .yellow-button {
+        background-color: yellow; /* Sets the background color to yellow */
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+      This is a comment inside the HTML.
+      The button below displays an alert when clicked.
+    -->
+    <button title="Good job!" class="red-button" onclick="
+      alert('Good job!'); /* This triggers a JavaScript alert when clicked */
+    ">
+      hello
+    </button>
+
+    <p>
+      paragraph of 
+      <!-- This button is inside the paragraph and styled with a yellow background -->
+      <button class="yellow-button">hello</button> 
+      text
+    </p>
+
+    <script>
+      // This is a JavaScript comment.
+      // The following line of code creates an alert pop-up when uncommented.
+      // alert('hello');
+
+      /*
+        This is a multi-line comment in JavaScript.
+        The following console.log statements print values to the browser console.
+      */
+
+      console.log(2 + 2); // Outputs 4 to the console
+      console.log('some' + 'text'); // Outputs 'sometext' (string concatenation)
+    </script>
+  </body>
+</html>
