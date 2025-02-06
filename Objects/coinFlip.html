@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Coin Flip
+        </title>
+    </head>
+
+    <body>
+        <button onclick = "
+            playGame('Heads');
+        ">
+            Heads
+        </button>
+        <button onclick="
+            playGame('Tails');
+        ">
+            Tails
+        </button>
+
+        <script>
+            
+            let score = JSON.parse(localStorage.getItem('score')) || {Wins: 0, Losses: 0};
+            function playGame(guess) {
+                let decidingFactor = Math.random();
+                let computerGuess = '';
+                if (decidingFactor <= 0.5) 
+                    computerGuess = 'Heads'
+                else  
+                    computerGuess = 'Tails'
+
+                let result = '';
+                if (computerGuess === guess) {
+                    result = 'Win.'
+                    score.Wins += 1;
+                }
+                else {
+                    result = 'Lose.'
+                    score.Losses += 1;
+                }
+                
+                localStorage.setItem('score', JSON.stringify(score));
+                console.log(`You picked ${guess}, Computer picked ${computerGuess}. ${result}.`);
+                console.log(score);
+            }
+        </script>
+    </body>
+</html> 
