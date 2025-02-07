@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        .gaming-style, .gaming-style1, .gaming-style2 {
+            color: white;
+            background-color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 700;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .is-toggled {
+            color: black;
+            background-color: rgb(240, 240, 240);
+        }
+    </style>
+</head>
+    <body>
+        <button class="gaming-style" onclick="toggleFunction()">Gaming</button>
+        <button class="gaming-style1" onclick="toggleFunction1()">Music</button>
+        <button class="gaming-style2" onclick="toggleFunction2()">Tech</button>
+        <script>
+            function toggleFunction() {
+                let button = document.querySelector('.gaming-style');
+                if (button.classList.contains('is-toggled')) {
+                    button.classList.remove('is-toggled');
+                } else {
+                    button.classList.add('is-toggled');
+                }
+            }
+            function toggleFunction1() {
+                let button = document.querySelector('.gaming-style1');
+                if (button.classList.contains('is-toggled')) {
+                    button.classList.remove('is-toggled');
+                } else {
+                    button.classList.add('is-toggled');
+                }
+            }
+            function toggleFunction2() {
+                let button = document.querySelector('.gaming-style2');
+                if (button.classList.contains('is-toggled')) {
+                    button.classList.remove('is-toggled');
+                } else {
+                    button.classList.add('is-toggled');
+                }
+            }
+        </script>
+    </body>
+</html>
+
+
+<!--
+The better solution would have been the usage of the function -- toggle 
+The code is written below for better reference ::
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Toggle Buttons</title>
+    <style>
+        .is-toggled {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="gaming-style" onclick="toggleFunction(this)">Gaming</button>
+    <button class="gaming-style" onclick="toggleFunction(this)">Music</button>
+    <button class="gaming-style" onclick="toggleFunction(this)">Tech</button>
+
+    <script>
+        function toggleFunction(button) {
+            button.classList.toggle('is-toggled');
+        }
+    </script>
+
+</body>
+</html>
+
+
+-->
