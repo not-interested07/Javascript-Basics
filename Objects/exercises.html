@@ -5,50 +5,63 @@
     </head>
     <body>
         <script>
+            // Creating an object 'product' with properties 'name' and 'price'
             const product = {
-                name : "basketball",
-                price : 2095
-            }
+                name : "basketball", // String property
+                price : 2095         // Number property (price in cents to avoid floating-point issues)
+            };
 
+            // Creating another object 'product2' for comparison
             const product2 = {
                 name : "basketball2",
                 price : 1000
-            }
+            };
+            
+            // Logging the initial state of 'product' to the console
             console.log(product);
 
-            product.price += 500;
+            // Modifying the 'price' property of 'product'
+            product.price += 500;  // Increases the price by 500 (new price: 2595)
             console.log(product);
 
-            product['delivery-time'] = "3 days";
+            // Adding a new property 'delivery-time' dynamically
+            product['delivery-time'] = "3 days"; // Bracket notation is needed due to hyphen in key name
             console.log(product);
 
+            // Function to compare the prices of two products
             function comparePrice(product1, product2) {
-                if (product1.price < product2.price)
+                if (product1.price < product2.price) {
                     console.log(`${product1.name} is less expensive.`);
-                else
+                } else {
                     console.log(`${product2.name} is less expensive.`);
+                }
             }
 
+            // Calling the function to compare 'product' and 'product2'
             comparePrice(product, product2);
 
+            // Function to compare two product objects based on their 'name' and 'price' properties
             function compareObjects(product1, product2) {
-                if (product1.name === product2.name) {
-                    if (product1.price === product2.price)
-                        return true;
+                // Check if both 'name' and 'price' are exactly the same
+                if (product1.name === product2.name && product1.price === product2.price) {
+                    return true; // Objects are considered equal
                 }
-                return false;
+                return false; // Objects are different
             }
 
-            console.log(compareObjects(product, product2));
+            // Comparing the two product objects and logging the result
+            console.log(compareObjects(product, product2)); // Should return false as names and prices are different
 
+            // String method: Convert a string to lowercase
             let str = "AppLe";
-            let lowerStr = str.toLowerCase();
+            let lowerStr = str.toLowerCase(); // Converts "AppLe" to "apple"
             console.log(lowerStr);
 
+            // String method: Repeat a string multiple times
             let str2 = "test";
-            let repeatedStr2 = str2.repeat(2);
+            let repeatedStr2 = str2.repeat(2); // Repeats "test" twice → "testtest"
             console.log(repeatedStr2);
- 
+
         </script>
     </body>
 </html>
