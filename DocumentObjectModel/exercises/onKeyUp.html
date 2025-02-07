@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        <input placeholder="Enter the text..." class = "js-input-box" onkeyup="appendOutput()">
+        <p class = "js-text-update"></p>
+
+        <script>
+            function appendOutput() {
+                let input = document.querySelector('.js-input-box').value;
+                document.querySelector('.js-text-update').innerText = input;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <button class = "heads" onclick = "outputFunction('Heads')">Heads</button>
+        <button class "tails" onclick = "outputFunction('Tails')">Tails</button>
+        <p class = "js-user-view"></p>
+
+        <script>
+            function outputFunction(coinChosen) {
+                if (coinChosen === 'Heads') {
+                    document.querySelector('.js-user-view').innerHTML = `You chose : ${coinChosen}`;
+                } else {
+                    document.querySelector('.js-user-view').innerHTML = `You chose : ${coinChosen}`;   
+                }
+            }
+        </script>
+    </body>
+</html>

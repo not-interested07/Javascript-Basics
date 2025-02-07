@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        <input placeholder="Type Your Name..." class="js-name-input" onkeydown="displayForKey(event)">
+        <button onclick = "nameDisplay();">
+            Submit
+        </button>
+        <p class="js-name-display"></p>
+
+        <script>
+            function nameDisplay(){
+                let nameEntered = document.querySelector('.js-name-input'); 
+                console.log(nameEntered.value);
+                document.querySelector('.js-name-display').innerHTML = `Your name is ${nameEntered.value}.`;
+            }
+
+            function displayForKey(event) {
+                if (event.key === 'Enter') {
+                    nameDisplay();
+                }
+            }
+        </script>
+    </body>
+</html>
