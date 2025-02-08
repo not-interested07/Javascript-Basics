@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function minMax(nums) {
+            let min = nums[0], max = nums[0];
+            for (let i = 0; i < nums.length; i++) {
+                if (nums[i] < min) {
+                    min = nums[i];
+                }
+                if (nums[i] > max) {
+                    max = nums[i];
+                }
+                return {Max: max,  Min :min};
+            }
+        }
+
+        function countWords(words) {
+            const result = {};
+
+            for (let i = 0; i < words.length; i++) {
+                const word = words[i];
+
+                if (!result[word]) {
+                    result[word] = 1;
+                } else {
+                    result[word]++;
+                }
+            }
+
+            return result;
+        }
+
+        console.log(countWords(['apple', 'grape', 'apple', 'apple']));
+    </script>
+</body>
+</html>
