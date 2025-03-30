@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Exercises
+        </title>
+    </head>
+    <body>
+        <script>
+            // Exercise -- 12j & 12k
+            const multiply = (a, b) => (a * b);
+            console.log(multiply(3, 4));
+            console.log(multiply(7, 10));
+
+            // Exercise -- 12l
+            const positiveNumCount = arr => {
+                let count = 0;
+                arr.forEach((item, index) => {
+                    if (item > 0) count++;
+                })
+                return count;
+            }
+            console.log(positiveNumCount([1,-2,3,3]));
+
+            // Execise -- 12m
+            let arr = [1,2,3,4,5,6,7];
+            let num = 1;
+            const incByNum = (arr, num) => {
+                return arr.map((value) => {
+                    return value + num;
+                })
+            }
+            arr = incByNum(arr, num);
+            console.log(arr);
+
+            // Exercise -- 12n
+            let array = ['egg', 'apple', 'egg', 'egg', 'ham'];
+            const removeEgg = array => {
+                return array.filter(value => value != 'egg');
+            } 
+            array = removeEgg(array);
+            console.log(array);
+
+            // Exercise -- 12o
+            let array2 = ['egg', 'apple', 'egg', 'egg', 'ham'];
+            const rem2Eggs  = array => {
+                let count = 0;
+                return array.filter(value => {
+                    if (count < 2 && value === 'egg') {
+                        count++;
+                        return false;
+                    }
+                    return true;
+                })
+            }
+            array2 = rem2Eggs(array2);
+            console.log(array2);
+
+        </script>
+    </body>
+</html>

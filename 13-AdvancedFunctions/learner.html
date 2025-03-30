@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Advanced Functions</title>
+    <style>
+      /* Basic styling for better readability */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- A sample button used in some event listener examples -->
+    <button class="js-button">Click</button>
+
+    <script>
+      // ========================
+      // SECTION 1: Event Listener Examples
+      // ========================
+      /*
+      // 1. Select the button element by its class name.
+      const buttonElement = document.querySelector('.js-button');
+
+      // 2. Define an event listener function using arrow function syntax.
+      const eventListener = () => {
+        console.log('click');
+      };
+
+      // 3. Attach the event listener for the 'click' event.
+      buttonElement.addEventListener('click', eventListener);
+
+      // 4. Remove the previously added event listener.
+      //    This prevents the 'click' event from triggering eventListener.
+      buttonElement.removeEventListener('click', eventListener);
+
+      // 5. Attach another event listener using an anonymous arrow function.
+      //    Multiple listeners can be added to the same event.
+      buttonElement.addEventListener('click', () => {
+        console.log('click2');
+      });
+      */
+
+      // ========================
+      // SECTION 2: Function Declarations & Expressions
+      // ========================
+      /*
+      // Function Declaration (hoisted): can be called before its definition.
+      greeting();
+      function greeting() {
+        console.log('hello');
+      }
+      greeting();
+
+      // Function Expression: defined as a variable; not hoisted like declarations.
+      const function1 = function() {
+        console.log('hello2');
+      };
+
+      console.log(function1);          // Logs the function code.
+      console.log(typeof function1);   // "function"
+      function1();                     // Executes and logs "hello2".
+
+      // Object with a method defined as a function expression.
+      const object1 = {
+        num: 2,
+        fun: function() {
+          console.log('hello3');
+        }
+      };
+      object1.fun();                   // Calls the object's method.
+
+      // A function that accepts a parameter and displays it.
+      function display(param) {
+        console.log(param);
+      }
+      display(2);                      // Logs 2.
+
+      // A higher-order function: it accepts another function as a parameter.
+      function run(param) {
+        param();
+      }
+      run(function() {
+        console.log('hello4');
+      });
+      */
+
+      // ========================
+      // SECTION 3: setTimeout() & setInterval() Examples
+      // ========================
+      /*
+      // setTimeout: schedules execution of the function after 3000ms (3 seconds).
+      setTimeout(function() {
+        console.log('timeout');
+        console.log('timeout2');
+      }, 3000);
+
+      console.log('next line'); // This logs immediately.
+
+      // setInterval: repeatedly executes the function every 3000ms.
+      setInterval(function() {
+        console.log('interval');
+      }, 3000);
+
+      console.log('next line 2'); // This logs immediately.
+      */
+
+      // ========================
+      // SECTION 4: Array.forEach() & Arrow Function Shortcuts
+      // ========================
+      /*
+      // Using forEach() to iterate over an array of tasks.
+      [
+        'make dinner',
+        'wash dishes',
+        'watch youtube'
+      ].forEach((value, index) => {
+        // If the current task is 'wash dishes', skip it.
+        if (value === 'wash dishes') {
+          return; // Ends the current iteration early.
+        }
+        console.log(index); // Logs the index.
+        console.log(value); // Logs the task value.
+      });
+
+      // Demonstrating a regular function expression that returns a value.
+      const regularFunction = function(param, param2) {
+        console.log('hello');
+        return 5;
+      };
+
+      // Equivalent arrow function with explicit return.
+      const arrowFunction = (param, param2) => {
+        console.log('hello');
+        return 5;
+      };
+      arrowFunction();
+
+      // Arrow function with a single parameter.
+      // Parentheses around the parameter are optional.
+      const oneParam = param => {
+        console.log(param + 1);
+      };
+      oneParam(2); // Logs 3.
+
+      // Arrow function with a single-line body:
+      // Curly braces and the return keyword are omitted.
+      const oneLine = () => 2 + 3;
+      console.log(oneLine()); // Logs 5.
+
+      // Object demonstrating two ways of defining methods:
+      // 1. Using an arrow function as a property.
+      // 2. Using the ES6 shorthand method syntax.
+      const object2 = {
+        // Arrow function property (note: doesn't bind its own 'this')
+        method: () => {
+          console.log('This is an arrow function method.');
+        },
+        // Shorthand method syntax; 'this' will refer to object2 if needed.
+        methodShort() {
+          console.log('This is the shorthand method syntax.');
+        }
+      };
+      object2.method();
+      object2.methodShort();
+      */
+
+      // ========================
+      // SECTION 5: Array Methods - filter() and map()
+      // ========================
+
+      // 1. Using filter() to remove negative numbers.
+      // The callback tests if each value is non-negative.
+      console.log(
+        [1, -3, 5].filter((value) => value >= 0)
+      ); // Expected output: [1, 5]
+
+      // 2. Using map() to create a new array by doubling each element.
+      // Example using a full arrow function block.
+      console.log(
+        [1, 1, 3].map((value, index) => {
+          return value * 2;
+        })
+      ); // Expected output: [2, 2, 6]
+
+      // Example using a concise one-line arrow function.
+      console.log([1, 1, 3].map(value => value * 2));
+
+      // ========================
+      // SECTION 6: Closure Demonstration
+      // ========================
+      /*
+      // Closure example: a function retains access to its lexical scope.
+      function createCounter() {
+        let count = 0; // 'count' is encapsulated in the closure.
+        // The inner function increments and logs the count.
+        return function() {
+          count++;
+          console.log(`Current count: ${count}`);
+        };
+      }
+
+      const counter = createCounter(); // 'counter' is now a closure over 'count'.
+      counter(); // Logs: Current count: 1.
+      counter(); // Logs: Current count: 2.
+      // Even after createCounter() finishes, 'counter' retains access to 'count'.
+      */
+    </script>
+  </body>
+</html>
