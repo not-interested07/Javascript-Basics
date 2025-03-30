@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercises</title>
+    </head>
+    <body>
+        <button class = "finish-button" onclick = "changeText();">
+            Start
+        </button>
+        <button class = "js-add-to-cart" onclick = "displayMessage()">
+            Add to Cart
+        </button>
+        <div class = "js-message"></div>
+
+        <button onclick="
+            messages++;
+            displayNotification();
+        ">
+            Add
+        </button>
+
+        <button onclick="
+        if (messages > 0) {
+            messages--;
+            // If there are no new messages, stop displaying
+            // the notification in the tab.
+            if (messages === 0) {
+                stopNotification();
+            }
+        }
+        ">
+            Remove
+        </button>
+        
+        <script>
+            // Exercise -- 12a
+            let add = function() {
+                console.log(2 + 3);
+            };
+            add();
+            add();
+
+            // Exercise -- 12b 
+            function runTwice(fun) {
+                fun();
+                fun();
+            }
+
+            runTwice(add);
+            runTwice(function() {console.log("12b");});
+
+            // Exercise -- 12c & 12d
+            function changeText() {
+                const button = document.querySelector('.finish-button');
+                button.innerHTML = 'Loading...';
+                setTimeout(function() {
+                    button.innerHTML = 'Finished!';
+                }, 1000);
+            }
+
+            // Exercise -- 12e & 12f
+            function displayMessage() {
+                let timerId;
+                const text = document.querySelector('.js-message');
+                text.innerHTML = 'Added';
+                clearTimeout(timerId);
+                timerId = setTimeout(function() {
+                    text.innerHTML = '';
+                }, 3000);
+            }
+
+           
+            // Exercise --12g
+            // Exercise -- 12h && 12i
+            let messages = 2;
+
+            // Save the intervalId in case we need to cancel it.
+            let intervalId;
+
+            // We'll use this variable to keep track of whether
+            // or not we're displaying the notification.
+            let isDisplayingNotification;
+
+            // Start displaying the notification in the tab
+            // when the page first loads.
+            displayNotification();
+
+            function displayNotification() {
+                // If we're already displaying the notification,
+                // stop this function because we don't want to
+                // create 2 intervals at the same time.
+                if (isDisplayingNotification) {
+                return;
+                }
+
+                isDisplayingNotification = true;
+
+                intervalId = setInterval(function() {
+                if (document.title === 'App') {
+                    document.title = `(${messages}) New messages`;
+                } else {
+                    document.title = 'App';
+                }
+                }, 1000);
+            }
+
+            function stopNotification() {
+                isDisplayingNotification = false;
+
+                clearInterval(intervalId);
+                document.title = 'App';
+            }
+
+        </script>
+    </body>
+</html>
