@@ -5,4 +5,4 @@ The notes for the testing lesson of javascript.
 
  // I didn't complete this lesson to a full extent -- PENDING..
 
- 
+ // there is content remaining at --20.28.53
