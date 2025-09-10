@@ -60,14 +60,22 @@ import { loadCart } from "../data/cart.js";
 // Only use await when you are inside an async function
 // Closest function has to be an async. <<
 async function loadPage() {
-    await loadProductsFetch();
+    try { 
+        //throw 'error1'; // Creates an error and the code moves to the catch statement directly
+        await loadProductsFetch();
 
-    // The case where you use await the value just gets returned
-    const value = await new Promise((resolve) => {
-        loadCart(() => {
-            resolve('value3');
-        })
-    });
+        // The case where you use await the value just gets returned
+        const value = await new Promise((resolve, reject) => {
+            // throw 'error2'; -- will create an error and the code moves to catch statements
+            loadCart(() => {
+                //reject('error3');
+                resolve('value3');
+            })
+        });
+    } catch (error){
+        console.log('Unexpected Error. Please try again later.');
+    }
+    
 
     renderOrderSummary();
     renderPaymentSummary();

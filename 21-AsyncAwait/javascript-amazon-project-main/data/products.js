@@ -53,7 +53,30 @@ class Clothing extends Product{
   }
 }
 
+
+// this was a demonstration for error handling -- didn't work quite well
 export let products = [];
+export function loadProducts(fun) {
+  const xhr = new XMLHttpRequest();
+  xhr.addEventListener('load', () => {
+    products = JSON.parse(xhr.response).map((productDetails)=> {
+      if (productDetails.type === 'clothing') {
+        return new Clothing(productDetails);
+      }
+      return new Product(productDetails);
+    });
+    console.log('load products -- needed');
+
+    fun();
+  });
+  xhr.addEventListener('error', () => {
+    console.log('Unexpected error : Please try again later.')
+  });
+  xhr.open('GET', 'https://supersimplebackend.dev/products');
+  xhr.send();
+}
+
+
 export function loadProductsFetch() {
   const promise = fetch(
     'https://supersimplebackend.dev/products'
@@ -67,6 +90,8 @@ export function loadProductsFetch() {
       return new Product(productDetails);
     });
     console.log('load products');
+  }).catch((error) => {
+    console.log("Unexpected error. Please try agian later.");
   })
 
   return promise;
@@ -75,27 +100,3 @@ export function loadProductsFetch() {
 // loadProductsFetch().then(() => {
 //   console.log('nextStep');
 // });
-
-export function loadProducts(fun) {
-  const xhr = new XMLHttpRequest();
-  xhr.addEventListener('load', () => {
-    products = JSON.parse(xhr.response).map((productDetails)=> {
-      if (productDetails.type === 'clothing') {
-        return new Clothing(productDetails);
-      }
-      return new Product(productDetails);
-    });
-    console.log('load products');
-
-    fun();
-  });
-  xhr.open('GET', 'https://supersimplebackend.dev/products');
-  xhr.send();
-}
-
-
-
-
-
-
-
